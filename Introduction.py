@@ -11,8 +11,8 @@ st.image(url,  output_format="PNG", width=300)
 
 df = pd.read_csv("life_expectancy.csv")
 
-st.title("🌎 Life Expectancy Data Analysis")
-st.header("Statistical Analysis on factors influencing Life Expectancy")
+st.title("Life Expectancy Data Analysis")
+st.subheader("Statistical Analysis on factors influencing Life Expectancy")
 st.markdown("##### Objectives")
 st.markdown("We aim to predict life expectancy based on immunization factors, mortality factors, economic factors, social factors and other health related factors.")
 
