@@ -4,13 +4,14 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import altair as alt
 import numpy as np
+from PIL import Image
 
-# image = Image.open('image.jpg')
-# st.image(image, width=600)
+url = "https://upload.wikimedia.org/wikipedia/commons/2/26/World_Health_Organization_Logo.svg"
+st.image(url,  output_format="PNG", width=300)
 
 df = pd.read_csv("life_expectancy.csv")
 
-st.title("01 - Life Expectancy (WHO)")
+st.title("🌎 Life Expectancy Data Analysis")
 st.header("Statistical Analysis on factors influencing Life Expectancy")
 st.markdown("##### Objectives")
 st.markdown("We aim to predict life expectancy based on immunization factors, mortality factors, economic factors, social factors and other health related factors.")
