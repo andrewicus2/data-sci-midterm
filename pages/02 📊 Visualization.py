@@ -44,6 +44,6 @@ lifehighcol.dataframe(average_life_expectancy.head(5), use_container_width = Tru
 lifelowcol.subheader("Lowest 5 Countries")
 lifelowcol.dataframe(average_life_expectancy.tail(5), use_container_width = True, hide_index = True)
 
-selected_aspect = st.selectbox(label = "Aspect Selector", options = dfviz.columns)
+selected_aspect = st.selectbox(label = "Factor Selector", options = dfviz.columns.drop(["Life Expectancy", "Country", "Year", "Status"]))
 
 st.scatter_chart(data = dfviz, x = selected_aspect, y = "Life Expectancy")
