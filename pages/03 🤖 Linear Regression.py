@@ -54,9 +54,9 @@ if prediction_type == 'Linear Regression':
 
     col1, col2 = st.columns(2)
     col1.subheader("Feature Columns top 25")
-    col1.write(x.head(25))
+    col1.write(x_test.head(25))
     col2.subheader("Target Column top 25")
-    col2.write(y.head(25))
+    col2.write(y_test.head(25))
 
     st.subheader('Results')
     # Note: You may want to adjust or remove this part since Linear Regression

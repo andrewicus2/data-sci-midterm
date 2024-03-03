@@ -44,6 +44,45 @@ lifehighcol.dataframe(average_life_expectancy.head(5), use_container_width = Tru
 lifelowcol.subheader("Lowest 5 Countries")
 lifelowcol.dataframe(average_life_expectancy.tail(5), use_container_width = True, hide_index = True)
 
+st.subheader("Individual Factor Impact on Lifespan")
+
 selected_aspect = st.selectbox(label = "Factor Selector", options = dfviz.columns.drop(["Life Expectancy", "Country", "Year", "Status"]))
+
+if selected_aspect == "Adult Mortality":
+    st.text("Adult Mortality Rates of both sexes (probability of dying between 15 and 60 years per 1000 population)")
+elif selected_aspect == "Infant Deaths":
+    st.text("Number of Infant Deaths per 1000 population")
+elif selected_aspect == "Alcohol Consumption":
+    st.text("Alcohol, recorded per capita (15+) consumption (in litres of pure alcohol)")
+elif selected_aspect == "Percentage Expenditure":
+    st.text("Expenditure on Health as a Percentage of GDP (%)")
+elif selected_aspect == "Hepatitis B":
+    st.text("Hepatitis B (HepB) immunization coverage among 1-year-olds (%)")
+elif selected_aspect == "Measles":
+    st.text("Number of reported cases per 1000 population")
+elif selected_aspect == "BMI":
+    st.text("Average Body Mass Index of entire population")
+elif selected_aspect == "Under-five Deaths":
+    st.text("Number of under-five deaths per 1000 population")
+elif selected_aspect == "Polio":
+    st.text("Polio (Pol3) immunization coverage among 1-year-olds (%)")
+elif selected_aspect == "Total Expenditure":
+    st.text("General government expenditure on health as a percentage of total government expenditure (%)")
+elif selected_aspect == "Diphtheria":
+    st.text("Diphtheria tetanus toxoid and pertussis (DTP3) immunization coverage among 1-year-olds (%)")
+elif selected_aspect == "HIV/AIDS":
+    st.text("Deaths per 1,000 live births HIV/AIDS (0-4 years)")
+elif selected_aspect =="GDP":
+    st.text("Gross Domestic Product per capita (in USD)")
+elif selected_aspect == "Population":
+    st.text("Population of the country")
+elif selected_aspect =="Thinness 10-19 Years":
+    st.text("Prevalence of thinness among children and adolescents for Age 10 to 19 (%)")
+elif selected_aspect == "Thinness 5-9 Years":
+    st.text("Prevalence of thinness among children for Age 5 to 9 (%)")
+elif selected_aspect == "Income composition of resources":
+    st.text("Human Development Index in terms of income composition of resources (index ranging from 0 to 1)")
+elif selected_aspect == "Schooling":
+    st.text("Number of years of Schooling (years)")
 
 st.scatter_chart(data = dfviz, x = selected_aspect, y = "Life Expectancy")
