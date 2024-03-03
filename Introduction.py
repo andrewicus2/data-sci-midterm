@@ -89,8 +89,7 @@ st.markdown(" The ratio of non-missing values to total records in dataset and ho
 
 st.write("Total data length:", len(df))
 nonmissing = (df.notnull().sum().round(2))
-completeness= round(sum(nonmissing)/len(df),2)
-
+completeness= round(sum(nonmissing)/df.size,2)
 st.write("Completeness ratio:",completeness)
 st.write(nonmissing)
 if completeness >= 0.80:
