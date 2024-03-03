@@ -24,7 +24,7 @@ train_size = st.sidebar.number_input("Train Set Size", min_value=0.00, step=0.01
 new_df = df.drop(labels= ['Life Expectancy','Country', 'Status'], axis=1)
 list_var = new_df.columns
 
-output_multi = st.multiselect(label = "Select Explanatory Variables", options = list_var, default=['Thinness 1-19 Years', 'Thinness 5-9 Years', 'Alcohol', 'BMI', 'GDP', 'Schooling', 'Measles', 'Hepatitis B'])
+output_multi = st.multiselect(label = "Select Explanatory Variables", options = list_var, default=['Thinness 10-19 Years', 'Thinness 5-9 Years', 'Alcohol', 'BMI', 'GDP', 'Schooling', 'Measles', 'Hepatitis B'])
 
 new_df2 = new_df[output_multi]
 x = new_df2
