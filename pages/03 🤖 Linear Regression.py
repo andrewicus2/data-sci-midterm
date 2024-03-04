@@ -15,13 +15,15 @@ st.image(url, output_format = "PNG", width = 300)
 st.title("🤖 Linear Regression")
 df = pd.read_csv("life_expectancy.csv")
 df = df.dropna()
+df["Status"] = df["Status"].replace({"Developing": 0, "Developed": 1})
+
 
 prediction_type = st.sidebar.selectbox('Select Type of Prediction', ['Linear Regression'])
 
 list_variables = df.columns
 select_variable = st.sidebar.selectbox('Select Variable to Predict', ['Life Expectancy'])
 train_size = st.sidebar.number_input("Train Set Size", min_value=0.00, step=0.01, max_value=1.00, value=0.70)
-new_df = df.drop(labels= ['Life Expectancy','Country', 'Status'], axis=1)
+new_df = df.drop(labels= ['Life Expectancy','Country'], axis=1)
 list_var = new_df.drop(labels = ['Year'], axis = 1).columns
 
 output_multi = st.multiselect(label = "Select Explanatory Variables", options = list_var, default=['Thinness 10-19 Years', 'Thinness 5-9 Years', 'Alcohol', 'BMI', 'GDP', 'Schooling', 'Measles', 'Hepatitis B'])
