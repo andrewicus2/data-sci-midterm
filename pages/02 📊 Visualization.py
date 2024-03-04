@@ -13,14 +13,6 @@ st.title("📊 Visualization")
 dfviz = pd.read_csv("life_expectancy.csv")
 dfviz = dfviz.dropna(subset=['Life Expectancy'])
 
-st.header("Correlation Map")
-
-dfHeat = dfviz.drop(['Country', 'Status', 'Year'], axis = 1)
-
-heatmap = plt.figure(figsize=(20, 12))
-sns.heatmap(dfHeat.corr(), annot=True)
-st.pyplot(heatmap)
-
 st.header("Life Expectancy by Country (2000 - 2015)")
 selected_countries = st.multiselect(label = "Select Countries", options = dfviz["Country"].unique(), default=['France', 'United States of America', 'Chad', 'Sierra Leone', 'Sudan'])
 
@@ -44,6 +36,19 @@ lifehighcol.dataframe(average_life_expectancy.head(5), use_container_width = Tru
 lifelowcol.subheader("Lowest 5 Countries")
 lifelowcol.dataframe(average_life_expectancy.tail(5), use_container_width = True, hide_index = True)
 
+# japan_life_expectancy = dfviz[dfviz["Country"] == "Japan"]
+# japan_life_expectancy = japan_life_expectancy.drop(labels = ["Status", "Country", "Year"], axis = 1)
+# st.bar_chart(japan_life_expectancy.mean())
+
+
+
+st.header("Correlation Map")
+
+dfHeat = dfviz.drop(['Country', 'Status', 'Year'], axis = 1)
+
+heatmap = plt.figure(figsize=(20, 12))
+sns.heatmap(dfHeat.corr(), annot=True)
+st.pyplot(heatmap)
 st.subheader("Individual Factor Impact on Lifespan")
 
 selected_aspect = st.selectbox(label = "Factor Selector", options = dfviz.columns.drop(["Life Expectancy", "Country", "Year", "Status"]))
