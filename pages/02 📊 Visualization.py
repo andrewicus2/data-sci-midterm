@@ -36,11 +36,6 @@ lifehighcol.dataframe(average_life_expectancy.head(5), use_container_width = Tru
 lifelowcol.subheader("Lowest 5 Countries")
 lifelowcol.dataframe(average_life_expectancy.tail(5), use_container_width = True, hide_index = True)
 
-# japan_life_expectancy = dfviz[dfviz["Country"] == "Japan"]
-# japan_life_expectancy = japan_life_expectancy.drop(labels = ["Status", "Country", "Year"], axis = 1)
-# st.bar_chart(japan_life_expectancy.mean())
-
-
 
 st.header("Correlation Map")
 
