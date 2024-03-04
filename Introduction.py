@@ -12,15 +12,16 @@ st.image(url,  output_format="PNG", width=300)
 df = pd.read_csv("life_expectancy.csv")
 
 st.title("Life Expectancy Data Analysis")
-st.subheader("Statistical Analysis on factors influencing Life Expectancy")
-st.markdown("##### Objectives")
+st.markdown("#### Objectives")
+st.markdown("Life expectancy values for 193 countries based on 20 health factors from the years 2000-2015.")
 st.markdown("We aim to predict life expectancy based on immunization factors, mortality factors, economic factors, social factors and other health related factors.")
-
 st.markdown("Although there have been lot of studies undertaken in the past on factors affecting life expectancy, it was found that the effect of immunization and the human development index were not taken into account.")
 
+st.markdown("#### Data Source")
+st.markdown("[Life Expectancy (WHO)](https://www.kaggle.com/datasets/kumarajarshi/life-expectancy-who) - Kaggle")
 
 headcol1, headcol2 = st.columns(2)
-num = headcol1.number_input('No. of Rows', 5, 10)
+num = headcol1.number_input('No. of Rows', 5, 15)
 
 head = headcol2.radio('View from top (head) or bottom (tail)', ('Head', 'Tail'), horizontal = True)
 if head == 'Head':
@@ -62,8 +63,8 @@ st.markdown("- **GDP** - Gross Domestic Product per capita (in USD)")
 st.markdown("- **Population** - Population of the country")
 st.markdown("- **Thinness 10-19 Years** - Prevalence of thinness among children and adolescents for Age 10 to 19 (%)")
 st.markdown("- **Thinness 5-9 Years** - Prevalence of thinness among children for Age 5 to 9 (%)")
-st.markdown("- **Income composition of resources** - Human Development Index in terms of income composition of resources (index ranging from 0 to 1)")
-st.markdown("- **Schooling** - Number of years of Schooling (years)")
+st.markdown("- **Income Composition of Resources** - Human Development Index in terms of income composition of resources (index ranging from 0 to 1)")
+st.markdown("- **Schooling** - Number of years of schooling (years)")
 
 st.markdown("### Description of Data")
 st.markdown("Descriptions for all quantitative data **(rank and streams)** by:")
