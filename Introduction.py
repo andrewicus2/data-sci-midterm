@@ -13,7 +13,7 @@ df = pd.read_csv("life_expectancy.csv")
 
 st.title("Life Expectancy Data Analysis")
 st.markdown("#### Objectives")
-st.markdown("Life expectancy values for 193 countries based on 20 health factors from the years 2000-2015.")
+st.markdown("Life expectancy values for 193 countries based on 20 (using 19) health factors from the years 2000-2015.")
 st.markdown("We aim to predict life expectancy based on immunization factors, mortality factors, economic factors, social factors and other health related factors.")
 st.markdown("Although there have been lot of studies undertaken in the past on factors affecting life expectancy, it was found that the effect of immunization and the human development index were not taken into account.")
 
