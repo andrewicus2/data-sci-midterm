@@ -93,3 +93,15 @@ if prediction_type == 'Linear Regression':
     correlation_fig = plt.figure(figsize = (10,8))
     plt.barh(feature_names, importance)
     st.pyplot(correlation_fig)
+
+    st.subheader('Prediction Engine')
+    inputs = {}
+    for col in x.columns:
+        inputs[col] = st.number_input(f"Enter value for {col}")
+
+    # Make predictions
+    input_data = pd.DataFrame([inputs])
+
+    if(st.button("Run Prediction", type = "primary")):
+        prediction = lr_model.predict(input_data)
+        st.metric(f"Predicted Life Expectancy:", prediction[0])
